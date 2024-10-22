@@ -7,8 +7,8 @@
     <title>Enhanced Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #c3e3fd, #dcf4ff, #e3fcf7);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #d7eaf3, #e9f5f9, #f3f9f7);
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,50 +19,53 @@
 
         .login-container {
             background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            padding: 50px 40px;
             width: 100%;
-            max-width: 400px;
-            transition: transform 0.3s;
+            max-width: 420px;
+            transition: transform 0.3s ease-in-out;
         }
 
         .login-container:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
             /* Slightly enlarge the container on hover */
         }
 
         h2 {
             text-align: center;
-            color: #023430;
+            color: #035246;
             margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .input-group label {
             display: block;
-            margin-bottom: 5px;
-            color: #606770;
+            margin-bottom: 8px;
+            color: #535b63;
+            font-weight: 500;
+            font-size: 14px;
         }
 
         .input-group input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #dddfe2;
-            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
             font-size: 16px;
             transition: border-color 0.3s, box-shadow 0.3s;
-            /* Add transition */
+            background-color: #f9f9f9;
         }
 
         .input-group input:focus {
-            border-color: #023430;
+            border-color: #035246;
             outline: none;
-            box-shadow: 0 0 5px rgba(2, 52, 48, 0.5);
-            /* Shadow effect on focus */
+            box-shadow: 0 0 8px rgba(2, 52, 48, 0.2);
         }
 
         .password-toggle {
@@ -72,42 +75,40 @@
         .password-toggle i {
             position: absolute;
             top: 50%;
-            right: 10px;
+            right: 15px;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #606770;
+            color: #535b63;
         }
 
         .password-strength {
-            height: 5px;
-            margin-top: 5px;
-            border-radius: 2px;
-            transition: width 0.3s;
+            height: 6px;
+            margin-top: 8px;
+            border-radius: 3px;
+            background-color: #e0e0e0;
+            transition: width 0.3s ease;
         }
 
         .login-button {
             width: 100%;
-            padding: 12px;
-            background-color: #023430;
+            padding: 14px;
+            background-color: #035246;
             color: #ffffff;
             border: none;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 6px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-            /* Add transition */
         }
 
         .login-button:hover {
-            background-color: #011c1a;
-            transform: translateY(-2px);
-            /* Slight lift effect on hover */
+            background-color: #023430;
+            transform: translateY(-3px);
         }
 
         .login-button:active {
             transform: translateY(0);
-            /* Reset lift effect on click */
         }
 
         .extras {
@@ -119,6 +120,7 @@
         .remember-me {
             display: flex;
             align-items: center;
+            font-size: 14px;
         }
 
         .remember-me input {
@@ -126,8 +128,10 @@
         }
 
         .forgot-password {
-            color: #023430;
+            color: #035246;
             text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .social-login {
@@ -136,8 +140,8 @@
         }
 
         .social-login p {
-            margin-bottom: 10px;
-            color: #606770;
+            margin-bottom: 15px;
+            color: #535b63;
         }
 
         .social-buttons {
@@ -147,27 +151,24 @@
 
         .social-btn {
             flex: 1;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 4px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s, transform 0.3s;
-            /* Add transition */
         }
 
         .social-btn:hover {
-            transform: translateY(-2px);
-            /* Lift effect on hover */
+            transform: translateY(-3px);
         }
 
         .social-btn:active {
             transform: translateY(0);
-            /* Reset lift effect on click */
         }
 
         .google-btn {
@@ -190,12 +191,12 @@
 
         .signup-link {
             text-align: center;
-            margin-top: 20px;
-            color: #606770;
+            margin-top: 25px;
+            color: #535b63;
         }
 
         .signup-link a {
-            color: #023430;
+            color: #035246;
             text-decoration: none;
             font-weight: bold;
         }
@@ -204,7 +205,7 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            color: #023430;
+            color: #035246;
             font-size: 24px;
             text-decoration: none;
         }
@@ -224,7 +225,7 @@
                 <label for="password">Password</label>
                 <div class="password-toggle">
                     <input type="password" id="password" placeholder="Enter your password" required>
-
+                    <i class="fas fa-eye" id="togglePassword"></i>
                 </div>
                 <div class="password-strength" id="passwordStrength"></div>
             </div>
